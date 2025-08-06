@@ -5,15 +5,58 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:verticalScrollbarPosition="defaultPosition"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="132dp"
+        android:text="CALCULADORA IMC"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rdbMasculino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masculino"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <RadioButton
+        android:id="@+id/rdbFeminino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feminino"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="280dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2EE035"
+        android:text="Calcular"
+        android:textColorLink="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#4BAE4F"
+        tools:layout_editor_absoluteY="448dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar campos"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="525dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
