@@ -1,6 +1,5 @@
-(<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -19,31 +18,56 @@
         android:layout_marginBottom="24dp" />
 
     <!-- Campo Peso -->
-
-    <!-- Campo Altura -->
-
-    <!-- Botões Masculino / Feminino -->
-
-    <EditText
-        android:id="@+id/edtPeso"
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@android:drawable/edit_text"
-        android:hint="Digite seu peso (kg)"
-        android:inputType="numberDecimal"
-        android:padding="12dp" />
-
-    <EditText
-        android:id="@+id/edtAltura"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginBottom="16dp"
-        android:background="@android:drawable/edit_text"
-        android:hint="Digite sua altura (m)"
-        android:inputType="numberDecimal"
-        android:padding="12dp" />
+        android:gravity="center_vertical">
 
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/peso"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Ícone Peso" />
+
+        <EditText
+            android:id="@+id/edtPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:hint="Digite seu peso (kg)"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- Campo Altura -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/altura"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Ícone Altura" />
+
+        <EditText
+            android:id="@+id/edtAltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/edit_text"
+            android:hint="Digite sua altura (m)"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- Botões Masculino / Feminino -->
     <RadioGroup
         android:id="@+id/radioGroupSexo"
         android:layout_width="match_parent"
@@ -96,5 +120,13 @@
         android:text="Seu IMC aparecerá aqui"
         android:textColor="#000000"
         android:textSize="18sp" />
+
+    <!-- Ícone Reciclar -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/recicle"
+        android:contentDescription="Ícone Reciclar"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
