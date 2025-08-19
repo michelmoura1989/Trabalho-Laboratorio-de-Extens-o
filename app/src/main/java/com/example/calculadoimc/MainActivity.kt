@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -21,12 +22,15 @@ class MainActivity : AppCompatActivity() {
         val btnCalcular = findViewById<Button>(R.id.btnCalcular)
         val btnLimpar = findViewById<Button>(R.id.btnLimpar)
         val txtResultado = findViewById<TextView>(R.id.textResultado)
+
         btnCalcular.setOnClickListener {
             val peso = edtPeso.text.toString().toFloatOrNull()
             val altura = edtAltura.text.toString().toFloatOrNull()
+            val sexoId = radioGroup.checkedRadioButtonId
 
-            if (peso != null && altura != null) {
+            if (peso != null && altura != null && sexoId != -1) {
                 val imc = peso / (altura * altura)
+                val sexo = findViewById<RadioButton>(sexoId).text.toString()
                 val classificacao = when {
                     imc < 18.5 -> "Abaixo do peso"
                     imc < 24.9 -> "Peso normal"
@@ -35,11 +39,10 @@ class MainActivity : AppCompatActivity() {
                     imc < 39.9 -> "Obesidade grau II"
                     else -> "Obesidade grau III"
                 }
-                txtResultado.text = "IMC: %.2f\n$classificacao".format(imc)
+                txtResultado.text = "Sexo: $sexo\nIMC: %.2f\n$classificacao".format(imc)
             } else {
-                txtResultado.text = "Preencha os campos corretamente"
+                txtResultado.text = "Preencha todos os campos corretamente"
             }
         }
     }
-
 }
